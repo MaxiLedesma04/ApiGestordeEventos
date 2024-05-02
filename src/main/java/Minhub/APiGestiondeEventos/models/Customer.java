@@ -22,17 +22,13 @@ public class Customer {
     @OneToMany
     private Set<Event> events = new HashSet<>();
 
-    public Customer(Long id, String name, String lastName, String email, Boolean activeted, int edad, CustomerGender gender) {
-        this.id = id;
+    public Customer( String name, String lastName, String email, Boolean activeted, int edad, CustomerGender gender) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.activeted = activeted;
         this.edad = edad;
         this.gender = gender;
-    }
-
-    public Customer() {
     }
 
     public Long getId() {

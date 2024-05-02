@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Entity
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
