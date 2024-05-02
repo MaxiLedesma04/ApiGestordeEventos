@@ -1,8 +1,9 @@
 package Minhub.APiGestiondeEventos.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class Event {
     @Id
@@ -12,7 +13,13 @@ public class Event {
     private char img;
     private short age_req;
     private char name;
-
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+    @OneToMany
+    private Set<Comment> comments = new HashSet<>();
+    @OneToMany
+    private Set<EventLocation> eventLocations = new HashSet<>();
     public Event(Long id, char desc, char img, short age_req, char name) {
         this.id = id;
         this.desc = desc;
